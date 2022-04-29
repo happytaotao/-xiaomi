@@ -1,0 +1,392 @@
+{
+  "problem": [
+
+
+    {
+      "categoryChild": [{
+          "categoryId": 1,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 1,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 2,
+          "categoryName": "音像1111"
+        }
+      ],
+      "categoryId": 1,
+      "categoryName": "图书、音像、电子书刊"
+
+
+    },
+
+    {
+      "categoryChild": [{
+          "categoryId": 2,
+          "categoryName": "手机"
+        },
+        {
+          "categoryId": 2,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 3,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 2,
+      "categoryName": "手机"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 3,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 3,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 4,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 3,
+      "categoryName": "家用电器"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 4,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 4,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 5,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 4,
+      "categoryName": "数码"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 5,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 5,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 6,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 5,
+      "categoryName": "家居家装"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 6,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 6,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 7,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 6,
+      "categoryName": "图书、音像、电子书刊"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 7,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 7,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 8,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 7,
+      "categoryName": "电脑办公"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 8,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 8,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 9,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 8,
+      "categoryName": "厨具"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 9,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 9,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 10,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 9,
+      "categoryName": "个护化妆品"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 10,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 10,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 11,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 10,
+      "categoryName": "服饰内衣"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 11,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 11,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 12,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 11,
+      "categoryName": "钟表"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 12,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 12,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 13,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 12,
+      "categoryName": "钟表"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 13,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 13,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 14,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 13,
+      "categoryName": "鞋靴"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 14,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 14,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 15,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 14,
+      "categoryName": "食品饮料、保健用品"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 15,
+          "categoryName": "电子书"
+        },
+        {
+          "categoryId": 15,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 16,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 15,
+      "categoryName": "鞋靴"
+
+
+    },
+    {
+      "categoryChild": [{
+          "categoryId": 16,
+          "categoryName": "电子书a"
+        },
+        {
+          "categoryId": 16,
+          "categoryName": "小书"
+        },
+        {
+          "categoryId": 17,
+          "categoryName": "音像"
+        }
+      ],
+      "categoryId": 16,
+      "categoryName": "汽车用品"
+
+
+    }
+
+
+
+  ],
+  "problem2": [{
+      "id": 1,
+      "name": "小米6",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img0.baidu.com/it/u=3968983733,2230754339&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=404"
+    },
+    {
+      "id": 2,
+      "name": "红米",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img1.baidu.com/it/u=3806098396,1833867658&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=1082"
+    },
+    {
+      "id": 3,
+      "name": "平板",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img2.baidu.com/it/u=726077096,3491246997&fm=253&fmt=auto&app=138&f=JPG?w=400&h=866"
+    },
+    {
+      "id": 4,
+      "name": "电视",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img2.baidu.com/it/u=3043035703,1333825288&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=889"
+    },
+    {
+      "id": 5,
+      "name": "小米6",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img1.baidu.com/it/u=4147445390,1475925352&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=1082"
+    },
+    {
+      "id": 6,
+      "name": "小米6",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img0.baidu.com/it/u=3968983733,2230754339&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=404"
+    },
+    {
+      "id": 7,
+      "name": "小米6",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img1.baidu.com/it/u=3806098396,1833867658&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=1082"
+    },
+    {
+      "id": 8,
+      "name": "小米6",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img2.baidu.com/it/u=726077096,3491246997&fm=253&fmt=auto&app=138&f=JPG?w=400&h=866"
+    },
+    {
+      "id": 9,
+      "name": "小米6",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img2.baidu.com/it/u=3043035703,1333825288&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=889"
+    },
+    {
+      "id": 10,
+      "name": "小米6",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img1.baidu.com/it/u=4147445390,1475925352&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=1082"
+    },
+    {
+      "id": 11,
+      "name": "小米6",
+      "msg": "5.16早10点开售",
+      "pirce": "2499.00",
+      "imgUrl": "https://img1.baidu.com/it/u=4147445390,1475925352&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=1082"
+    }
+  ]
+}
