@@ -14,22 +14,22 @@ class LB {
     this.$('#classification').addEventListener('click', this.changeHtml.bind(this))
   }
 
-  async getData(current = 1) {
+  async getData(current = 2) {
 
     let pagesize = 10
     //! 一页多少条传参
-    let res = await axios.get(this.baseUrl + '?' + 'pagesize=' + pagesize + '&' + 'current=' + current)
+    let res = await axios.get(this.baseUrl + '?pagesize=' + pagesize + '&current=' + current)
 
 
     console.log(res);
     let {
       data,
       status,
-      total,
     } = res
-    let page = data.yourParams.current - 0
+    // console.log(data.total);
     // console.log(page);
-    this.current = Math.ceil(total / pagesize)
+    this.total = Math.ceil(data.total / pagesize)
+    // console.log(this.total);
     if (status == 200) {
       // 分页
       let pageNation = `
@@ -38,9 +38,9 @@ class LB {
         <span aria-hidden="true" class="fy">&laquo;</span>
       </a>
     </li>`
-      for (var i = 1; i <= this.current; i++) {
+      for (var i = 1; i <= this.total; i++) {
         pageNation += `
-      <li class="${page==i && 'active'} fya" ><a href="#none">${i}</a></li>
+      <li class="${current==i && 'active'} fya" ><a href="#none">${i}</a></li>
       `
       }
       pageNation += `
@@ -80,12 +80,11 @@ class LB {
       })
       this.$('#liebiao').innerHTML = tr
     }
-
   }
 
   // 改变分类事件
   changeHtml(e) {
-    console.log(e.target.innerHTML);
+    // console.log(e.target.innerHTML);
     this.$('#biaoti').innerHTML = e.target.innerHTML
     // console.log($('#biaoti').html());
   }
@@ -163,6 +162,7 @@ class LB {
   // 封装出来的分页方法
   somePage(val) {
     // 获取当前active的标签的页数
+    console.log(val);
     let curPage = this.$('.active').firstElementChild.innerHTML
 
     // 向前查看
@@ -172,7 +172,7 @@ class LB {
     }
     // 向后查看
     if (val.getAttribute('aria-label') == 'Next') {
-      if (curPage == this.current) return;
+      if (curPage == this.total) return;
       ++curPage
     }
 

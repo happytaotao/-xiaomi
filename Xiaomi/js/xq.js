@@ -48,7 +48,9 @@ class XQ {
 
 
 			str += `
-			<div class="left fl"><img src="${info.img_big_logo}" style="width:100%"></div>
+			<div  class="left fl jqzoom">
+			<div id="image" class="uio" style="background-image:url(${info.img_big_logo})"></div>
+			 </div>
 			<div class="right fr">
 				<div class="h3 ml20 mt20">${info.category}</div>
 				<div class="jianjie mr40 ml20 mt10">${info.title}</div>

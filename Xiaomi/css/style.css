@@ -250,3 +250,11 @@ footer{width: 100%;height: 120px;line-height: 30px;text-align: center;font-size:
 
 body .demo-class .layui-layer-title{background:orange; color:#fff; border: none;}
 
+#image{
+	width: 100%;
+	height: 100%;
+}
+#image[zoomed]{
+background-size: 1200px 1200px;
+background-position: calc(var(--x)*100%) calc(var(--y)*100%);
+}

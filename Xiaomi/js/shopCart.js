@@ -5,7 +5,7 @@ class shopCart {
     // 全选点击事件
     this.$('#quanxuan').addEventListener('click', this.allCheck.bind(this))
 
-    // 绑定事件
+    // 绑定委托事件
     this.$('#content2').addEventListener('click', this.getOneChecked.bind(this))
 
   }
@@ -22,14 +22,14 @@ class shopCart {
     console.log(data);
     // 判断有没有登录，没有登录跳回到登录页面
     if (status == 200) {
-      if (data.code == 401 || !token) {
+      if (data.code == 401 || !token || data.code == 0) {
         location.assign('./login.html?ReturnUrl=./gouwuche.html')
       } else {
         // 商品页展示
         let tr = ''
         data.cart.forEach(item => {
           tr += `
-          <div class="content2 center">
+          <div class="content2 center" id="con">
             <div class="sub_content fl ">
               <input type="checkbox" value="quanxuan" class="quanxuan" />
             </div>
@@ -40,36 +40,22 @@ class shopCart {
               <input class="shuliang" type="number" value="${item.cart_number}" step="1" min="1">
             </div>
             <div class="sub_content fl" id="price">${item.goods_number*item.price}</div>
-            <div class="sub_content fl"><a href="#none" style="font-size:14px; width:30px;" id="delete" data-id="${item.goods_id}">删除</a></div>
+            <div class="sub_content fl"><a href="#none" style="font-size:14px; width:30px;" class="remove" id="delete" data-id="${item.goods_id}">删除</a></div>
             <div class="clear"></div>
           </div>
        
           `
         })
         this.$('#content2').innerHTML = tr
-
-        // 几件商品
-        let tr1 = ''
-        tr1 += `
-          <ul>
-            <li><a href="./liebiao.html">继续购物</a></li>
-              <li>|</li>
-            <li>共<span>${data.cart.length}</span>件商品，已选择<span id="checked">0</span>件</li>
-            <div class="clear"></div>
-          </ul>
-        
-        `
-        this.$('#tishi').innerHTML = tr1
-
       }
     }
   }
 
   // 事件委托获取单选状态，改变全选
-  async getOneChecked({
+  getOneChecked({
     target
   }) {
-    // 如果是单选按钮
+    // !如果是单选按钮
     if (target.classList.contains('quanxuan')) {
       // console.log(target.checked);
       // 单选方法封装出去
@@ -78,16 +64,50 @@ class shopCart {
       this.numAndNumber()
 
     }
-    let del = target.getAttribute("id")
-    console.log(del);
-    // 如果是删除按钮
-    if (target.getAttribute("id") == 'delete') {
-      let id = localStorage.getItem('id') - 0
-      let goodsId = localStorage.getItem('goodsId') - 0
-      let res = await axios.get('http://localhost:8888/cart/remove?id=' + id + '&goodsId=' + goodsId)
-      // if ()
 
-      console.log(res);
+    // !如果是删除按钮
+    if (target.getAttribute("id") == 'delete') {
+      let that = this
+      let del = document.querySelector('.remove')
+      let goods_id = del.dataset.id
+      let id = localStorage.getItem('id') - 0
+
+      // console.log(document.querySelector('#con'));
+      // 获取删除的节点
+      let con = document.querySelector('#con')
+      // 关闭提醒
+      let layIndex = layer.open({
+        title: "删除提示",
+        content: '你要抛弃我吗？',
+        btn: ['确定', '取消', ],
+        yes: async function (index, layero) {
+          //按钮【按钮一】的回调
+          let res = await axios.get('http://localhost:8888/cart/remove?id=' + id + '&goodsId=' + goods_id)
+          if (res.status == 200) {
+            if (res.data.code == 1) {
+              // 关闭弹出框
+              layer.close(layIndex)
+              layer.msg('商品删除成功');
+              con.remove()
+              // 再调用一次数量总价  此处如果用this的话指向发生变化
+              // console.log(this);
+              that.numAndNumber()
+
+            }
+          }
+
+          console.log(res);
+
+
+
+        },
+        btn2: function (index, layero) {
+          //按钮【按钮二】的回调
+
+          //return false 开启该代码可禁止点击该按钮关闭
+        }
+
+      });
     }
   }
 
@@ -95,13 +115,14 @@ class shopCart {
   // 全选
   allCheck(e) {
     // 获取全选状态
-    console.log(e.target.checked);
+    // console.log(e.target.checked);
     let allChecked = e.target.checked
     // 获取单选的状态
     // this.$('#quanxuan')
     this.oneChecked(allChecked)
     // this.$('#checked').innerHTML = num
-
+    // 数量和价格
+    this.numAndNumber()
   }
 
   // 点击全选设置每个单选框状态
@@ -115,6 +136,7 @@ class shopCart {
     // console.log(this.$('.quanxuan').length);
     let cLength = this.$('.quanxuan').length
     this.$('#checked').innerHTML = cLength
+
   }
 
   // 单选按钮的状态转换
@@ -128,7 +150,7 @@ class shopCart {
       // console.log(this.$('.quanxuan'));
       let res = Array.from(this.$('.quanxuan')).find(item => {
         // console.log(item.checked);
-        // 每次从前向后查找，有一个没有被选中就返回一个input,当全被选中，则返回underfined
+        // 每次从前向后查找，有一个没有被选中就返回一个input,当全被选中，没有被选中的单选框时，则返回underfined
         return !item.checked
       })
       // console.log(res);
@@ -151,7 +173,7 @@ class shopCart {
 
     goods.forEach(item => {
       // 获取单选框选中状态的数量和价格
-      // console.log(item.firstElementChild.firstElementChild.checked);
+      // console.log(item.firstElementChild.firstElementChild);
 
       if (item.firstElementChild.firstElementChild.checked) {
         num = (++num);
@@ -161,10 +183,12 @@ class shopCart {
         // console.log(item.querySelector('#price').innerHTML - 0);
         totalPrice = item.querySelector('#price').innerHTML - 0 + totalPrice
         // console.log(totalPrice);
-        this.$('#total').innerHTML = totalPrice + '元'
-        this.$('#checked').innerHTML = num
       }
+
     })
+    this.$('#totalShop').innerHTML = totalNum
+    this.$('#total').innerHTML = totalPrice
+    this.$('#checked').innerHTML = num
 
   }
 
