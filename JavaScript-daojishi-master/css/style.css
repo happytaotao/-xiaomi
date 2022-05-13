@@ -1,0 +1,42 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.countdown{
+    margin:300px 700px;
+}
+a{
+    text-decoration: none;
+    background-image: url(../img/bg1.png);
+    background-size:100% 100%;
+    display: block;
+    width: 190px;
+    height: 100%;
+    color: #fff;
+}
+a h1{
+    text-align: center;
+    padding-top:50px;
+}
+a h3{
+    padding-top:80px;
+    text-align: center;
+    display: block;
+    padding-bottom:40px;
+}
+a .sp-1{
+    font-size:14px;
+    font-weight: 300;
+}
+#time1,#time2,#time3{
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+}
+.times{
+    padding-bottom:34px;
+    text-align: center;
+}
+
+
